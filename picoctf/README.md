@@ -1,5 +1,4 @@
-Format:
-We can pop the elements of the stack using this vulnerability. 
+<b>Format</b>
 
 Goal: Replace the value of secret with 1337 to get shell 
 

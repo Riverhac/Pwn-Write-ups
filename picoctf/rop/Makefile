@@ -1,0 +1,2 @@
+(all):
+	gcc -m32 -z execstack -fno-stack-protector -static -o rop1 rop1.c

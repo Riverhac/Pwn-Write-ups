@@ -1,5 +1,6 @@
 from pwn import *
 
+#change the host IP to your IP
 sh = ssh(host='192.168.1.104', user='root',
                 password='godmode', port=22)
 cmd = sh.set_working_directory('/opt/protostar/bin')

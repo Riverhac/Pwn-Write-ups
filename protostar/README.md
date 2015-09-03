@@ -7,9 +7,9 @@ a proper payload to be passed as the argument.
 
 ###Heap1
 
-There are two arguments here and two strcpy(). The first strcpy() could be used 
+There are two arguments here and two `strcpy()`. The first `strcpy()` could be used 
 to overwrite the pointer to the value in first argument. The heap looks somewhat like 
-this after both the strcpy is done:
+this after both the `strcpy()` is done:
 
 After opening the binary in gdb, run it with random arguments.
 

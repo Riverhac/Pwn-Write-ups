@@ -15,7 +15,7 @@ After opening the binary in gdb, run it with random arguments.
 
 `$ r AAAA BBBB`
 
-``
+```
 0x804a000:      0x00000000      0x00000011      0x00000001      0x0804a018
 
 0x804a010:      0x00000000      0x00000011      0x41414141      0x00000000
@@ -25,7 +25,7 @@ After opening the binary in gdb, run it with random arguments.
 0x804a030:      0x00000000      0x00000011      0x42424242      0x00000000
 
 0x804a040:      0x00000000      0x00020fc1      0x00000000      0x00000000
-``
+```
 
 Notice that there is a pointer in the heap that points to the location 
 where the value is getting copied. `0x0804a018` is exactly the address 

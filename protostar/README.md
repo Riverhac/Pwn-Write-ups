@@ -1,7 +1,9 @@
 ###Heap0
 
 In the source code, we can see that the function pointer is pointing to address of no-winner. 
-We have a strcpy() which can overwrite the address of function pointer with address of winner. 
+We have a strcpy() which can overwrite the address of function pointer with address of winner.
+This is a basic exploit where we have to find the address of winner, the offset, and make 
+a proper payload to be passed as the argument. 
 
 ###Heap1
 

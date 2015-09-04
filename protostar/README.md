@@ -37,3 +37,24 @@ the pointer to the second argument. If we could rewrite it to the address
 of `GOT("puts")` [printf appears as puts in GOT table], then what we enter to arg2 
 will be the new value of puts as the function pointer is changed. 
 The next step is simple. Pass the second argument as the address of `winner()`.
+
+###Heap2
+
+This was pretty tricky for me as I couldn't recognize the vulnerability easily.
+I didn't need an exploit to actually exploit this binary. 
+Running the `service` with a long string would turn the auth->auth `set`.
+
+The magic lies in the statement :
+`auth = malloc(sizeof(auth));`
+
+This allocates only the size of a pointer, which is 4 bytes using `malloc()`. 
+You can check this by playing around a bit with auth and service.
+In GDB, the following commands will help you get more clarity :
+```
+(gdb) p &auth->name
+(gdb) p &auth->auth
+(gdb) p service
+```
+You will realise that `service` is allocated overlapping with `auth` expected memory space.
+Calling `service` with a long string would overwrite `auth->auth` giving it a positive value. 
+
